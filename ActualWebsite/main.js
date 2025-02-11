@@ -1,25 +1,65 @@
-import * as THREE from 'three';
+var scene, camera, renderer;
 
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+init();
 
-const renderer = new THREE.WebGLRenderer();
-renderer.setSize( window.innerWidth, window.innerHeight );
-renderer.setAnimationLoop( animate );
-document.body.appendChild( renderer.domElement );
+function init(){
+	scene = new THREE.Scene();
+	camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
-const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-const cube = new THREE.Mesh( geometry, material );
-scene.add( cube );
+	
+	camera.position.x = 1;
+	camera.position.z = -5;
+	camera.lookAt(0,0,0);
+	renderer = new THREE.WebGLRenderer();
+	renderer.setSize( window.innerWidth, window.innerHeight );
+	renderer.setAnimationLoop( animate );
+	document.body.appendChild( renderer.domElement );
 
-camera.position.z = 5;
+	let light
+
+	light = new THREE.DirectionalLight(); 
+	light.position.set(5, -11, -9);
+	scene.add(light);
+	
+	light = new THREE.DirectionalLight(); 
+	light.position.set(-17, -11, -12);
+	scene.add(light);
+
+	light = new THREE.DirectionalLight(); 
+	light.position.set(12, -9, 16);
+	scene.add(light);
+
+	light = new THREE.DirectionalLight(); 
+	light.position.set(2, 10, -0.5);
+	scene.add(light);
+
+	light = new THREE.DirectionalLight(); 
+	light.position.set(8, 10, -14);
+	scene.add(light);
+
+	let model;
+	const loader = new THREE.GLTFLoader();
+	loader.load("Assets/Can.glb", function (gltf) {
+		scene.add(gltf.scene);
+		//model = gltf.scene;
+		animate();
+	});
+
+
+
+	window.addEventListener('resize', onResize, false);
+
+	renderer.setAnimationLoop(animate);
+
+}
 
 function animate() {
+	//model.rotation.y +=0.01;
+	renderer.render(scene,camera);
+}
 
-	cube.rotation.x += 0.01;
-	cube.rotation.y += 0.01;
-
-	renderer.render( scene, camera );
-
+function onResize(){
+	camera.aspect = window.innerWidth / window.innerHeight;
+	camera.updateProjectionMatrix();
+	renderer.setSize(window.innerWidth, window.innerHeight);
 }
