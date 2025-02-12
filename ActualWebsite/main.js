@@ -7,8 +7,8 @@ function init(){
 	camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
 	
-	camera.position.x = 1;
-	camera.position.z = -5;
+	camera.position.x = 5;
+	camera.position.z = -3;
 	camera.lookAt(0,0,0);
 	renderer = new THREE.WebGLRenderer();
 	renderer.setSize( window.innerWidth, window.innerHeight );
@@ -37,24 +37,28 @@ function init(){
 	light.position.set(8, 10, -14);
 	scene.add(light);
 
-	let model;
+	
 	const loader = new THREE.GLTFLoader();
 	loader.load("Assets/Can.glb", function (gltf) {
-		scene.add(gltf.scene);
-		//model = gltf.scene;
-		animate();
+		model = gltf.scene;
+		scene.add(model);
+		//animate();
 	});
 
 
 
 	window.addEventListener('resize', onResize, false);
-
-	renderer.setAnimationLoop(animate);
+	animate();
 
 }
 
 function animate() {
-	//model.rotation.y +=0.01;
+	requestAnimationFrame(animate);
+	if(model)
+	{
+		model.rotation.y += 0.003;
+	}
+	
 	renderer.render(scene,camera);
 }
 
