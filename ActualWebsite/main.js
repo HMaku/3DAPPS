@@ -9,7 +9,7 @@ function init(){
 	
 	camera.position.x = 5;
 	camera.position.z = -3;
-	camera.lookAt(0,0,0);
+	camera.lookAt(0, 0, 0);
 	renderer = new THREE.WebGLRenderer();
 	renderer.setSize( window.innerWidth, window.innerHeight );
 	renderer.setAnimationLoop( animate );
@@ -56,7 +56,7 @@ function animate() {
 	requestAnimationFrame(animate);
 	if(model)
 	{
-		model.rotation.y += 0.003;
+		model.rotation.y += 0.001;
 	}
 	
 	renderer.render(scene,camera);
@@ -66,4 +66,24 @@ function onResize(){
 	camera.aspect = window.innerWidth / window.innerHeight;
 	camera.updateProjectionMatrix();
 	renderer.setSize(window.innerWidth, window.innerHeight);
+}
+
+dropDown();
+function dropDown()
+{
+	document.addEventListener("DOMContentLoaded", function () {
+		let dropdowns = document.querySelectorAll(".dropdown");
+
+		dropdowns.forEach(function (dropdown) {
+			dropdown.addEventListener("mouseover", function () {
+				let menu = this.querySelector(".dropdown-menu");
+				menu.classList.add("show");
+			});
+
+			dropdown.addEventListener("mouseleave", function () {
+				let menu = this.querySelector(".dropdown-menu");
+				menu.classList.remove("show");
+			});
+		});
+	});
 }
