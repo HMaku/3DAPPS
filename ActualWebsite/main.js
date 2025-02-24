@@ -37,6 +37,10 @@ function init(){
 	light.position.set(8, 10, -14);
 	scene.add(light);
 
+	const controls = new
+	THREE.OrbitControls(camera,renderer.domElement);
+	controls.target.set(1, 2, 0);
+	controls.update();
 	
 	const loader = new THREE.GLTFLoader();
 	loader.load("Assets/Can.glb", function (gltf) {

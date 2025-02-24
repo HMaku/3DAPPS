@@ -27,6 +27,30 @@
 	<script src="https://kit.fontawesome.com/6ac3910c4e.js" crossorigin="anonymous"></script>
 	<script src="js/bootstrap.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+	<script>
+		dropDown();
+		function dropDown() {
+			document.addEventListener("DOMContentLoaded", function () {
+				let dropdowns = document.querySelectorAll(".dropdown");
+
+				dropdowns.forEach(function (dropdown) {
+					dropdown.addEventListener("mouseover", function () {
+						let menu = this.querySelector(".dropdown-menu");
+						menu.classList.add("show");
+					});
+
+					dropdown.addEventListener("mouseleave", function () {
+						let menu = this.querySelector(".dropdown-menu");
+						menu.classList.remove("show");
+					});
+				});
+			});
+		}
+	</script>
+
+
+
+
 	<style>
 		body {
 			margin: 0;
@@ -106,7 +130,24 @@
 	<script src='https://s3-us-west-
 		2.amazonaws.com/s.cdpn.io/2666677/GLTFLoader.js'></script>
 	<script src="CanOpen.js"></script>
-	<a href="index.html" class="btn btn-info" role="button">Link Button</a>
+	<a href="index.html" class="btn btn-info" role="button">Go back</a>
+	<a href="" class="btn btn-info" role="button">Play animation</a>
+	<script>
+		mode = 'open';
+		const btn = document.getElementById("btn");
+		btn.addEventListener('click', function () {
+			if (actions.length === 2) {
+				if (mode === "open") {
+					actions.forEach(action => {
+						action.timeScale = 1;
+						action.reset();
+						action.play();
+					});
+				}
+			}
+		});
+	</script>
+
 	<div>
 
 
