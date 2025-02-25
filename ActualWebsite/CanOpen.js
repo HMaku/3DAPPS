@@ -45,19 +45,20 @@ function init() {
 
 
 	const loader = new THREE.GLTFLoader();
-	loader.load("Assets/OpenCan.glb", function (gltf) {
-		const model = gltf.scene;
-		scene.add(model);
+	loader.load("Assets/OpenCan.glb",
+		function (gltf) {
+			const model = gltf.scene;
+			scene.add(model);
 
 
-		const mixer = new THREE.AnimationMixer(model);
-		const animations = gltf.animations;
-		animations.forEach(clip => {
-			const action = mixer.clipAction(clip);
-			actions.push(action)
+			mixer = new THREE.AnimationMixer(model);
+			const animations = gltf.animations;
+			animations.forEach(clip => {
+				const action = mixer.clipAction(clip);
+				action.play()
 
+			});
 		});
-	});
 
 	window.addEventListener('resize', onResize, false);
 	animate();
