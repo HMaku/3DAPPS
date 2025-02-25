@@ -79,6 +79,8 @@ function init() {
 		animations.forEach(clip => {
 			const action = mixer.clipAction(clip);
 			actions.push(action);
+			action.setLoop(THREE.LoopOnce);
+			action.clampWhenFinished = true;
 		});
 
 	});
