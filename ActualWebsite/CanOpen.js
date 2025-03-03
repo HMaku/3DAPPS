@@ -1,6 +1,8 @@
 
 
 var scene, mixer, model, camera, renderer, actions = [], clock, mode;
+let loadedModel;
+let secondMixer, secondAction = [];
 
 init();
 
