@@ -112,7 +112,7 @@ function init() {
 		});
 	}
 	// Inital model
-	loadModel('Assets/CanCrush.glb');
+	loadModel('Assets/OpenCan.glb');
 
 	// Set the path of the model and correct btn id
 	const switchBtn = document.getElementById('switchModel');
