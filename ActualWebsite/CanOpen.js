@@ -105,7 +105,7 @@ function init() {
 				action.clampWhenFinished = true;
 			});
 
-			if (modelPath === 'Assets/CanCrush.glb') {
+			if (modelPath === 'Assets/Can3Crush2.glb') {
 				secondMixer = mixer;
 				secondAction = actions;
 			}
@@ -117,7 +117,7 @@ function init() {
 	// Set the path of the model and correct btn id
 	const switchBtn = document.getElementById('switchModel');
 	switchBtn.addEventListener('click', function () {
-		loadModel('Assets/CanCrush.glb');
+		loadModel('Assets/Can3Crush3.glb');
 	});
 
 
@@ -137,7 +137,7 @@ function animate() {
 		mixer.update(clock.getDelta());
 	}
 	if (secondMixer) {
-		secondMixer.update(clock.getDelta);
+		secondMixer.update(clock.getDelta());
 	}
 
 	renderer.render(scene, camera);
