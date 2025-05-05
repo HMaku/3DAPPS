@@ -53,8 +53,11 @@
 			margin: 0;
 			justify-content: center;
 			align-items: center;
+            margin: 0; 
+            overflow: hidden;
+   
 		}
-
+        canvas { display: block; }
 		p,
 		h1,
 		h2,
@@ -79,7 +82,7 @@
 		}
 	</style>
 	<!--body-->
-	<title>3D Web Page</title>
+	<title>SpriteGallery</title>
 </head>
 
 <body>
@@ -130,16 +133,24 @@
 		<a href="index.html" class="btn">Go back</a>
 		<button id="btn" class="btn">Play Animation</button>
 		<button id="switchModel" class="btn">Switch Model</button>
-		<button id="toggleWireframe" class="btn">Toggle Wireframe</button>
+        <button id="toggleWireframe" class="btn">Toggle Wireframe</button>
 		<script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/106/three.min.js'></script>
 		<script src='https://s3-us-west-
 		2.amazonaws.com/s.cdpn.io/2666677/OrbitControls.js'></script>
 		<script src='https://s3-us-west-
 		2.amazonaws.com/s.cdpn.io/2666677/GLTFLoader.js'></script>
-		<script src="CanOpen.js"></script>
+		<script src="spritegallery.js"></script>
 	</div>
+    	<!--Ending band-->
+	<nav class="navbar navbar-expand-lg" style="background-color: rgb(237, 247, 247);">
+		<div class="container-fluid p-4;">
+			<h1 style="color: rgb(0, 0, 0);">2025 Web Application 3D H7006 ©</h1>
+		</div>
+
+	</nav>
 
 
 </body>
+
 
 </html>
