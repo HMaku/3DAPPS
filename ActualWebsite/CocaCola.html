@@ -77,6 +77,25 @@
 		.header {
 			font-size: large;
 		}
+
+		.bottom-navbar {
+			position: flex;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 100px;
+			background-color: #222;
+			color: white;
+			text-align: left;
+			padding-top: 30px;
+			text-indent: 10px;
+			line-height: 50px;
+			z-index: 1;
+		}
+		.btn
+		{
+			border: 1px solid black;
+		}
 	</style>
 	<!--body-->
 	<title>3D Web Page</title>
@@ -117,7 +136,7 @@
 								Models
 							</a>
 							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="CocaCola.html">Cans</a></li>
+								<li><a class="dropdown-item" href="cans.html">Cans</a></li>
 								<li><a class="dropdown-item" href="#">Bottles</a></li>
 								<li><a class="dropdown-item" href="#">Big Bottles</a></li>
 							</ul>
@@ -127,10 +146,16 @@
 			</div>
 	</nav>
 	<div>
+		<h2 style="text-align: center;">Press the buttons below and see what happens to the model!</h2>
+	</div>
+	<div>
 		<a href="index.html" class="btn">Go back</a>
 		<button id="btn" class="btn">Play Animation</button>
 		<button id="switchModel" class="btn">Switch Model</button>
 		<button id="toggleWireframe" class="btn">Toggle Wireframe</button>
+		
+	</div>
+	<div style="padding-top: 10px;">
 		<script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/106/three.min.js'></script>
 		<script src='https://s3-us-west-
 		2.amazonaws.com/s.cdpn.io/2666677/OrbitControls.js'></script>
@@ -138,6 +163,13 @@
 		2.amazonaws.com/s.cdpn.io/2666677/GLTFLoader.js'></script>
 		<script src="CanOpen.js"></script>
 	</div>
+	<!--Ending band-->
+	<nav class="bottom-navbar navbar-expand-lg" style="background-color: rgb(237, 247, 247);">
+		<div class="container-fluid p-4;">
+			<h1 style="color: rgb(0, 0, 0);">2025 Web Application 3D H7006 ©</h1>
+		</div>
+	</nav>
+
 
 
 </body>

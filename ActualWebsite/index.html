@@ -80,8 +80,9 @@
 
 		.container {
 			position: relative;
+			max-width: 700px;
 			width: 100vw;
-			height: 60vh;
+			height: auto;
 			overflow: hidden;
 		}
 
@@ -124,12 +125,6 @@
 
 		* {
 			box-sizing: border-box;
-		}
-
-		body {
-			font-family: Arial, sans-serif;
-			margin: 0;
-			padding: 0;
 		}
 
 		.slideshow-container {
@@ -177,6 +172,29 @@
 		.next {
 			right: 10px;
 		}
+
+		.model-container {
+			width: 30%;
+			height: 400px;
+			display: flex;
+			align-items: center;
+			border: 1px solid rgb(0, 0, 0);
+			margin: 0 0.5%;
+		}
+		.bottom-navbar {
+			position: flex;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 100px;
+			background-color: #222;
+			color: white;
+			text-align: left;
+			padding-top: 30px;
+			text-indent: 10px;
+			line-height: 50px;
+			z-index: 1;
+		}
 	</style>
 	<!--body-->
 	<title>3D Web Page</title>
@@ -217,7 +235,7 @@
 								Models
 							</a>
 							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="CocaCola.html">Cans</a></li>
+								<li><a class="dropdown-item" href="cans.html">Cans</a></li>
 								<li><a class="dropdown-item" href="#">Bottles</a></li>
 								<li><a class="dropdown-item" href="#">Big Bottles</a></li>
 							</ul>
@@ -272,28 +290,22 @@
 		</script>
 	</div>
 
-
-	<script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/106/three.min.js'></script>
-	<script src='https://s3-us-west-
-		2.amazonaws.com/s.cdpn.io/2666677/OrbitControls.js'></script>
-	<script src='https://s3-us-west-
-		2.amazonaws.com/s.cdpn.io/2666677/GLTFLoader.js'></script>
-
-	</script>
+	
 	<!--3 columns-->
 	<div style="margin-top: 100px;">
-		<h1 style="font-size: 72px; text-align: center; ">Explore the brands</h1>
+		<h1 style="font-size: 72px; text-align: center; ">Explore the Coca Cola Range!</h1>
 		<div class="container" style="margin-top: 100px;">
 			<a href="CocaCola.html">
 				<img src="Assets/Model assets/cola.jpg" class="image">
-				<p class="text-behind">Coca-Cola is a soft drink manufactured by the Coca-Cola Company. In 2013, Coke
+				<p class="text-behind">Coca-Cola is a soft drink manufactured by the Coca-Cola Company. In 2013,
+					Coke
 					products
 					were sold in over
 					200 countries and territories worldwide, with consumers drinking more than 1.8 billion company
 					beverage
-					servings each day. As of 2023, Coca-Cola is the one of the world's top 10 most valuable brands.</p>
+					servings each day. As of 2023, Coca-Cola is the one of the world's top 10 most valuable brands.
+				</p>
 			</a>
-			<script src="main.js"></script>
 		</div>
 		<div class="container">
 			<a href="Fanta.html">
@@ -321,19 +333,16 @@
 					primarily to compete against 7 Up.</p>
 			</a>
 		</div>
-
 	</div>
+
 	<!--Ending band-->
-	<nav class="navbar navbar-expand-lg" style="background-color: rgb(237, 247, 247);">
+	<nav class="bottom-navbar navbar-expand-lg" style="background-color: rgb(237, 247, 247);">
 		<div class="container-fluid p-4;">
 			<h1 style="color: rgb(0, 0, 0);">2025 Web Application 3D H7006 ©</h1>
 		</div>
-
 	</nav>
-	
-	
 
-
+	
 
 </body>
 

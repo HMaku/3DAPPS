@@ -1,20 +1,19 @@
 
+
 var scene, mixer, model, camera, renderer, actions = [], clock, mode, btnName;
 let loadedModel;
 let secondMixer, secondAction = [];
-let modelPaths = ['Assets/FantaCan.glb', 'Assets/CanCrushFanta.glb'];
+let currentModelIndex = 0
+let modelPaths = ['Assets/OpenCan.glb', 'Assets/Can3Crush3.glb'];
 init();
 
 function init() {
     scene = new THREE.Scene(); clock = new THREE.Clock();
     camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     const cameraPositions = [
-        { x: -4, y: 3, z: 2 },  // For FantaCan
-        { x: -5, y: 3, z: 2 } // For CanCrushFanta
+        { x: -4, y: 5, z: 2 },  // For FantaCan
+        { x: 30, y: 15, z: -20 } // For CanCrushFanta
     ];
-
-    let currentModelIndex = 0
-
     const newCam = cameraPositions[currentModelIndex];
     camera.position.set(newCam.x, newCam.y, newCam.z);
     camera.lookAt(0, 0, 0);
@@ -40,34 +39,19 @@ function init() {
         });
     });
 
-    // Lighting
-    let light
-
-    light = new THREE.HemisphereLight(0x0000ff, 1);
-    scene.add(light)
-    //Right
-    light = new THREE.DirectionalLight();
-    light.position.set(0, 1.614, 1.793);
-    scene.add(light);
-
-    light = new THREE.DirectionalLight();
-    light.position.set(-1.692, 1.632, 0);
-    scene.add(light);
-
-    light = new THREE.DirectionalLight();
-    light.position.set(0, -0.435, 0.017);
-    scene.add(light);
-
-    light = new THREE.DirectionalLight();
-    light.position.set(1.598, 1.597, 0);
-    scene.add(light);
-
-    light = new THREE.DirectionalLight();
-    light.position.set(0, 1.558, -1.803);
-    scene.add(light);
-
-    light = new THREE.PointLight();
-    light.position.set(-11.382, -4.595, 1.663)
+	const lightPositions = [
+		[5, -11, -9],
+		[-17, -11, -12],
+		[12, -9, 16],
+		[2, 10, -0.5],
+		[8, 10, -14]
+	  ];
+	
+	  lightPositions.forEach(pos => {
+		const light = new THREE.DirectionalLight();
+		light.position.set(...pos);
+		scene.add(light);
+	  });
 
     // Orbital control
     const controls = new
@@ -118,14 +102,14 @@ function init() {
                 action.clampWhenFinished = true;
             });
 
-            if (modelPath === 'Assets/Can3Crush2.glb') {
-                secondMixer = mixer;
-                secondAction = actions;
-            }
+            // if (modelPath === 'Assets/Can3Crush2.glb') {
+            //     secondMixer = mixer;
+            //     secondAction = actions;
+            // }
         });
     }
     // Inital model
-    loadModel('Assets/FantaCan.glb');
+    loadModel('Assets/OpenCan.glb');
 
     // Set the path of the model and correct btn id
     const switchBtn = document.getElementById('switchModel');

@@ -11,7 +11,7 @@ function init() {
     scene = new THREE.Scene(); clock = new THREE.Clock();
     camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     const cameraPositions = [
-        { x: -4, y: 5, z: 3 },  // For FantaCan
+        { x: -4, y: 5, z: 2 },  // For FantaCan
         { x: 30, y: 15, z: -20 } // For CanCrushFanta
     ];
     const newCam = cameraPositions[currentModelIndex];
@@ -38,35 +38,19 @@ function init() {
             }
         });
     });
-
-    // Lighting
-    let light
-
-    light = new THREE.HemisphereLight(0x0000ff, 1);
-    scene.add(light)
-    //Right
-    light = new THREE.DirectionalLight();
-    light.position.set(0, 1.614, 1.793);
-    scene.add(light);
-
-    light = new THREE.DirectionalLight();
-    light.position.set(-1.692, 1.632, 0);
-    scene.add(light);
-
-    light = new THREE.DirectionalLight();
-    light.position.set(0, -0.435, 0.017);
-    scene.add(light);
-
-    light = new THREE.DirectionalLight();
-    light.position.set(1.598, 1.597, 0);
-    scene.add(light);
-
-    light = new THREE.DirectionalLight();
-    light.position.set(0, 1.558, -1.803);
-    scene.add(light);
-
-    light = new THREE.DirectionalLight();
-    light.position.set(-11.382, -4.595, 1.663)
+    const lightPositions = [
+        [5, -11, -9],
+        [-17, -11, -12],
+        [12, -9, 16],
+        [2, 10, -0.5],
+        [8, 10, -14]
+      ];
+    
+      lightPositions.forEach(pos => {
+        const light = new THREE.DirectionalLight();
+        light.position.set(...pos);
+        scene.add(light);
+      });
 
     // Orbital control
     const controls = new
