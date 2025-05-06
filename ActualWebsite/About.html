@@ -55,7 +55,10 @@
 			align-items: center;
 		}
 
-		p,
+		p{
+			font-size: 18px;
+			font-family: 'Inter'
+		}
 		h1,
 		h2,
 		h3,
@@ -76,6 +79,20 @@
 
 		.header {
 			font-size: large;
+		}
+		.bottom-navbar {
+			position: flex;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 100px;
+			background-color: #222;
+			color: white;
+			text-align: left;
+			padding-top: 30px;
+			text-indent: 10px;
+			line-height: 50px;
+			z-index: 1;
 		}
 	</style>
 	<!--body-->
@@ -118,7 +135,7 @@
 							</a>
 							<ul class="dropdown-menu">
 								<li><a class="dropdown-item" href="cans.html">Cans</a></li>
-								<li><a class="dropdown-item" href="#">Bottles</a></li>
+								<li><a class="dropdown-item" href="Bottles.html">Bottles</a></li>
 								<li><a class="dropdown-item" href="#">Big Bottles</a></li>
 							</ul>
 						</li>
@@ -138,23 +155,62 @@
 		<h1 style="padding: 10px;"> 3D models</h1>
 		<p style="padding-left: 10px;"> All models in the project were made using Blender and displayed using Three.js.</p>
 		<h3 style="padding-left: 10px">1. Coca-Cola</h3>
-		<div>
-			<img src="Assets/AboutPageImages/Screenshot 2025-05-04 011701.png" style="height: 60vh;padding-left: 15px;">
-			<img src="Assets/AboutPageImages/Screenshot 2025-05-04 015214.png" style="height: 60vh;padding-left: 15px;">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<img src="Assets/AboutPageImages/Screenshot 2025-05-04 011701.png" style="height: 60vh;padding-left: 15px;">
+				</div>
+				<div class="col">
+					<img src="Assets/AboutPageImages/Screenshot 2025-05-04 015214.png" style="height: 60vh;padding-left: 15px;">
+				</div>
+			</div>
 		</div>
-		<p style="padding-left: 10px;">For the Coca-Cola range, 3 models have been created, this includes a 12 oz can, a glass bottle and a 1.5L bottle.</p>
+		<p style="padding-left: 10px;">For the Coca-Cola range, 2 models have been created, this includes a 12 oz can, a glass bottle. Plans are coming for the 1.5L bottle and in hopes to be added
+			to the site in the future.</p>
 		<h3 style="padding-left: 10px">2. Fanta / Sprite </h3>
-		<img src="Assets/AboutPageImages/Screenshot 2025-05-04 014244.png" style="height: 60vh;padding-left: 15px;">
-		<img src="Assets/AboutPageImages/Screenshot 2025-05-04 014358.png" style="height: 60vh;padding-left: 15px;">
-		<img src="Assets/AboutPageImages/Screenshot 2025-05-04 014633.png" style="height: 60vh;padding-left: 15px;">
-		<p style="padding-left: 10px;">For both the Fanta and Sprite range, a 12 oz can, a 500ml bottle and a 2L bottle model was produced for the project. </p>
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<img src="Assets/AboutPageImages/Screenshot 2025-05-04 014244.png" style="height: 60vh;padding-left: 15px;">
+				</div>
+				<div class="col">
+					<img src="Assets/AboutPageImages/Screenshot 2025-05-04 014358.png" style="height: 60vh;padding-left: 15px;">
+				</div>
+				<div class="col">
+					<img src="Assets/AboutPageImages/Screenshot 2025-05-04 014633.png" style="height: 60vh;padding-left: 15px;">
+				</div>
+			</div>
+		</div>
+		<p style="padding-left: 10px;">For both the Fanta and Sprite range, a 12 oz can, a 500ml bottle have been produced for the project. A 2.0L bottle and the 500ml bottle version for Fanta would be coming soon</p>
 	</div>
-
-	<nav class="navbar navbar-expand-lg" style="background-color: rgb(237, 247, 247);">
+	<div>
+		<h1 style="padding-left: 10px">Design</h1>
+		<p style="padding-left: 10px">The design takes inspiration from <a href="https://dribbble.com/tags/modern-web">this website</a> and the official <a href="https://www.coca-cola.com/gb/en">Coca-Cola UK</a> website. The idea is to create a clean and simple website 
+		so that it is easier to display my designs in modelling for all to see.</p>
+	</div>
+	<div>
+		<h1 style="padding-left: 10px">Interactive features</h1>
+		<p style="padding-left: 10px">The site features a change of models and a function to toggle wireframe of the model. Two animations are also avaliable for the cans.</p>
+	</div>
+	<div>
+		<h1 style="padding-left: 10px">Implementation</h1>
+		<p style="padding-left: 10px">The site can be displayed and works with Visual Studio Code.</p>
+	</div>
+	<div>
+		<h1 style="padding-left: 10px">Learnings and findings</h1>
+		<p style="padding-left: 10px">Modeling gets somewhat tricky especially with the bottles. This is because the indents of the bottle typically seen on
+			soft drink bottles are difficult to perfect and take large sums of time to get it right. I also learned throughout modelling by using recommended extentions of Blender 
+			to make modelling easier, such as adding a single vert and more features that I have yet to discover, for reference, you check it out <a href="https://extensions.blender.org/add-ons/extra-mesh-objects/">here</a>.
+			Another is that gltf models exported to Three.JS have great limitations on how complex the animations can be as some animations such as shape keys and actions of non visible objects such as lattices
+			cannot be translated by Three.JS therefore require another workaround to create the effect I desired. Lastly, the project has demonstrated, modern websites should use frameworks such as React to acheive the 
+			clean animations of web features instead of programming each in CSS and JS which is not as time efficient. 
+		</p>
+	</div>
+	<!--Ending band-->
+	<nav class="bottom-navbar navbar-expand-lg" style="background-color: rgb(237, 247, 247);">
 		<div class="container-fluid p-4;">
 			<h1 style="color: rgb(0, 0, 0);">2025 Web Application 3D H7006 ©</h1>
 		</div>
-
 	</nav>
 	
 </body>
