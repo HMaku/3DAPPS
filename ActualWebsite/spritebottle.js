@@ -1,5 +1,5 @@
 (function() {
-    const container = document.getElementById('model1');
+    const container = document.getElementById('model2');
   
     // Core Three.js setup
     const scene = new THREE.Scene();
